@@ -72,7 +72,7 @@
           Time
         </div>
         <div class="input_box col-lg-10">
-          <input type="text" id="time1" class="form-control owninput"><br>
+          <input type="text" id="time1" class="form-control owninput"  ><br>
           <h6>00: 00</h6>
         </div>
       </div>
@@ -109,16 +109,30 @@
   <script type="text/javascript" src="jquery-key-restrictions.js"></script>
   <script src="alex-date-time.js"></script>
   <script src="alex-date-time2.js"></script>
-  
+  <script src="jquery.maskinput.js"></script>
+
 </body>
 <script>
   $('#demo-1,#demo-2').EnsureMaxLength();
   $(document).ready(function () {
     $("#demo-1").lettersOnly();
     $("#sss").unbind("keydown").keydown(function (e) { var thisk = e.keyCode || e.which; console.log(e.keyCode) });
-    $("#date1").typeADate();
-    $("#date2").typeADate2();
-    $("#time1").typeATime();
+    // $("#date1").typeADate();
+    // $("#date2").typeADate2();
+    $('#date2').maskInput(
+      [, /[01]/, /\d/, ":", /[0-3]/, /\d/, ":", /[12]/, /[90]/, /\d/, /\d/],
+
+    );
+    $('#date1').maskInput(
+      [, /[01]/, /\d/, "/", /[0-3]/, /\d/, "/", /[12]/, /[90]/, /\d/, /\d/],
+
+    );
+    $('#time1').maskInput(
+      [,  /[0-2]/, /\d/, "/", /[0-5]/, /\d/,],
+
+    );
+  
+    // $("#time1").typeATime();
     // // $("#time2").val("  :    /  /    ");
     // $("#time2").mask("  s45", { placeholder: "xx xx xx xx" })
 

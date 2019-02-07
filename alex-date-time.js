@@ -64,6 +64,7 @@ $.fn.typeATime = function() {
 	
 	var reg = /(0[0-9]|1[0-9]|2[0-3]|HH)[:](0[0-9]|[1-5][0-9]|HH)/;
 	
+	
 	thisob.next().on("click touchstart", function() {
 		thisob.focus();
 		if (reg.test(thisob.val()) === false) { thisob.val("  :  "); }
