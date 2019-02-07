@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>jQuery Ensure Max Length Plugin Examples</title>
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #fafafa;
+    }
+
+    small {
+      color: #bcc2c8;
+    }
+
+    .container {
+      margin: 150px auto;
+      max-width: 640px;
+    }
+
+    .in_content {
+      text-align: right;
+      padding: 8px;
+    }
+
+    .input_box {
+      margin-bottom: 50px;
+    }
+
+    .owninput {
+      width: 500px;
+      height: 40px;
+    }
+
+    h6 {
+      color: #bcc2c8;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="form_box">
+      <div class="date_box">
+        <div class="in_content col-lg-2">
+          Date
+        </div>
+        <div class="input_box col-lg-10">
+          <input type="text" id="date2" class="form-control owninput"><br>
+          <h6>01-01-2017</h6>
+        </div>
+      </div>
+
+      <div class="date_box">
+        <div class="in_content col-lg-2">
+          Date
+        </div>
+        <div class="input_box col-lg-10">
+          <input type="text" id="date1" class="form-control owninput"><br>
+          <h6>01/01/2017</h6>
+        </div>
+      </div>
+      <div class="date_box">
+        <div class="in_content col-lg-2">
+          Time
+        </div>
+        <div class="input_box col-lg-10">
+          <input type="text" id="time1" class="form-control owninput"><br>
+          <h6>00: 00</h6>
+        </div>
+      </div>
+      <div class="date_box">
+        <div class="in_content col-lg-2">
+          Time-Date
+        </div>
+        <div class="input_box col-lg-10">
+          <input type="text" id="time2" class="form-control owninput">
+          <h6>00: 00 01/01/2017</h6>
+        </div>
+      </div>
+      <div class="date_box">
+        <div class="in_content col-lg-2">
+          Characters (only)
+        </div>
+        <div class="input_box col-lg-10">
+          <input type="text" class="form-control owninput" id="demo-1" placeholder="">
+        </div>
+      </div>
+
+
+
+
+      <br>
+      <br>
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+    crossorigin="anonymous"></script>
+  <script src="dist/jquery-ensure-max-length.min.js"></script>
+  <script type="text/javascript" src="jquery-key-restrictions.js"></script>
+  <script src="alex-date-time.js"></script>
+  <script src="alex-date-time2.js"></script>
+  
+</body>
+<script>
+  $('#demo-1,#demo-2').EnsureMaxLength();
+  $(document).ready(function () {
+    $("#demo-1").lettersOnly();
+    $("#sss").unbind("keydown").keydown(function (e) { var thisk = e.keyCode || e.which; console.log(e.keyCode) });
+    $("#date1").typeADate();
+    $("#date2").typeADate2();
+    $("#time1").typeATime();
+    // // $("#time2").val("  :    /  /    ");
+    // $("#time2").mask("  s45", { placeholder: "xx xx xx xx" })
+
+  });
+
+</script>
+
+
+</html>
